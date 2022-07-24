@@ -4,12 +4,12 @@ function ethereumKeyGeneration() {
 
   // the native crypto module in nodejs
   var crypto = require("crypto");
-  for (i = 0; i < 5; i++) {
+  for (i = 0; i < 10; i++) {
     var id = crypto.randomBytes(32).toString("hex");
     var privateKey = "0x" + id;
-    console.log("This is your private key:", privateKey);
+    console.log("This is the private key:", privateKey);
     var wallet = new ethers.Wallet(privateKey);
-    console.log("Address: " + wallet.address);
+    console.log("This is the address: " + wallet.address);
   }
 }
 ethereumKeyGeneration();
